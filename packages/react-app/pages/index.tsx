@@ -111,14 +111,14 @@ useEffect(() => {
     </div>
 
     <div className=" ">
-      <span className="block text-center mt-24">Betting History</span>
+      <span className="block text-center mt-24 text-2xl font-bold mb-5">Betting History</span>
       {
        result?.map((res) => (
-        <div className=" flex justify-around items-start " key={res.id}>
-          <p> {(res.id).toString()}</p>
+        <div className=" flex justify-around items-start border-2 border-black" key={res.id}>
+          <p> Bet ID: {(res.id).toString()}</p>
           <p className="text-left"> {res.signer}</p>
-          <p> {(res.choice).toString()}</p>
-          {res.won? <p>Won</p> : <p>Lost</p>}
+          <p> Choice:{(res.choice).toString()}</p>
+          {res.won? <p className=" bg-green-800 text-white p-1">Won</p> : < p className=" bg-red-800 text-white p-1">Lost</p>}
           <p>{((res.amountWon)/1e18).toString()} CELO</p>
         </div>
        )) 
