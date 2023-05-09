@@ -96,3 +96,4 @@ task("print-account", "Prints the address of the account", () => {
     const wallet = new hre.ethers.Wallet(process.env.PRIVATE_KEY);
     console.log(`Account: `, wallet.address);
 });
+
